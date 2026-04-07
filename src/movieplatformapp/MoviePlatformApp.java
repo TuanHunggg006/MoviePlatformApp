@@ -1,20 +1,52 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+//package movieplatformapp;
+//
+//import movieplatformapp.manager.AuthManager;
+//import movieplatformapp.manager.MovieManager;
+//import movieplatformapp.model.Movie;
+//import movieplatformapp.model.User;
+//
+//public class MoviePlatformApp {
+//    public static void main(String[] args) {
+//        AuthManager authManager = new AuthManager();
+//        User user = authManager.login("admin", "123");
+//
+//        if (user != null) {
+//            System.out.println("Login success: " + user.getFullName());
+//        } else {
+//            System.out.println("Login failed");
+//        }
+//
+//        MovieManager movieManager = new MovieManager();
+//
+//        System.out.println("=== Movie List ===");
+//        for (Movie movie : movieManager.getAllMovies()) {
+//            System.out.println(movie);
+//        }
+//    }
+//}
 package movieplatformapp;
 
-/**
- *
- * @author OS
- */
-public class MoviePlatformApp {
+import movieplatformapp.manager.AuthManager;
+import movieplatformapp.manager.MovieManager;
+import movieplatformapp.model.Movie;
+import movieplatformapp.model.User;
 
-    /**
-     * @param args the command line arguments
-     */
+public class MoviePlatformApp {
     public static void main(String[] args) {
-        // TODO code application logic here
+        AuthManager authManager = new AuthManager();
+        User user = authManager.login("admin", "123");
+
+        if (user != null) {
+            System.out.println("Login success: " + user.getFullName());
+        } else {
+            System.out.println("Login failed");
+        }
+
+        MovieManager movieManager = new MovieManager();
+
+        System.out.println("=== Movie List ===");
+        for (Movie movie : movieManager.getAllMovies()) {
+            System.out.println(movie);
+        }
     }
-    
 }
